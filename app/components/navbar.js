@@ -7,9 +7,8 @@ function Navbar() {
         <p className="text-4xl tracking-wider">Darana</p>
       </div>
 
-      <div className="flex flex-row md:mr-5 pt-3 basis-1/4 justify-between">
+      <div className="flex flex-row md:mr-5 pt-2 md:pt-3 basis-1/4 justify-between">
         <p className="text-xl">Blog</p>
-        <p className="text-xl ml:2 md:ml-0">Showcase</p>
       </div>
     </div>
   );
