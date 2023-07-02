@@ -8,6 +8,10 @@ export default function NavbarButtons() {
   const [playSound, setPlaySound] = useState(true);
   const [isFirstLoad, setFirstLoad] = useState(true);
 
+  let dayNightToggleSound = new Audio("/click.mp3");
+  let voldownSound =  new Audio("/voldown.wav");
+  let volupSound = new Audio("/volup.mp3");
+
   return (
     <>
       {theme === "dark" ? (
@@ -18,7 +22,7 @@ export default function NavbarButtons() {
           onClick={() => {
             setTheme("light");
             setFirstLoad(false);
-            playSound ? new Audio("/click.mp3").play() : null;
+            playSound ? dayNightToggleSound.play(): null;
           }}
         />
       ) : (
@@ -29,7 +33,7 @@ export default function NavbarButtons() {
           onClick={() => {
             setTheme("dark");
             setFirstLoad(false);
-            playSound ? new Audio("/click.mp3").play() : null;
+            playSound ? dayNightToggleSound.play() : null;
           }}
         />
       )}
@@ -41,7 +45,7 @@ export default function NavbarButtons() {
           onClick={() => {
             setPlaySound(false);
             setFirstLoad(false);
-            new Audio("/voldown.wav").play();
+            voldownSound.play()
           }}
         />
       ) : (
@@ -51,7 +55,7 @@ export default function NavbarButtons() {
           onClick={() => {
             setPlaySound(true);
             setFirstLoad(false);
-            new Audio("/volup.mp3").play();
+            volupSound.play();
           }}
         />
       )}
