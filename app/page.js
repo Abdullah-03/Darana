@@ -1,4 +1,3 @@
-"use client"
 import TypingEffect from './components/typingEffect'
 
 export default function Home() {
