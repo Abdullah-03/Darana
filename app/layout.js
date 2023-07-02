@@ -1,7 +1,11 @@
+"use client"
+
 import "./globals.css";
 import { Inter } from "next/font/google";
 
 import Navbar from "./components/navbar";
+import { useState } from "react";
+import { ThemeContext } from "./Contexts";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,12 +15,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const [theme, setTheme] = useState("dark");
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        {children}
-      </body>
+    <html lang="en" className={theme}>
+      <ThemeContext.Provider value={{theme, setTheme}}>
+        <body className={inter.className + " bg-white dark:bg-black"}>
+          <Navbar />
+          {children}
+        </body>
+      </ThemeContext.Provider>
     </html>
   );
 }

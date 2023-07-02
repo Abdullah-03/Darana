@@ -48,3 +48,16 @@ body {
   height: 34px;
   background-color: white;
 }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-0.2turn);
+  }
+  100% {
+    transform: rotate(0turn);
+  }
+}
+
+.rotateIcon {
+  animation: 0.5s ease-out 0s 1 rotate;
+}
